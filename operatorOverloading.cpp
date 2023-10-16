@@ -29,7 +29,8 @@ class Box
         t.h = h + n.h;
         return t;
     }
-    
+    // Operator Overloading for multiplication
+
     Box operator*(Box &p)
     {
         Box bx;
@@ -38,6 +39,9 @@ class Box
         bx.h = h * p.h;
         return bx;
     }
+
+    // Operator Overloading for Division
+    
     Box operator/(Box &o)
     {
         Box q;
