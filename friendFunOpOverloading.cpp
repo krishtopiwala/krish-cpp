@@ -28,6 +28,15 @@ class Box
         return t;
     }
 
+    friend Box operator-(Box p, Box q)
+    {
+        Box bt;
+        bt.l = p.l - q.l;
+        bt.w = p.w - q.w;
+        bt.h = p.h - q.h;
+        return bt;
+    }
+
     friend Box operator++(Box o)
     {
         Box t;
@@ -40,7 +49,7 @@ class Box
 
 int main()
 {
-    Box b1, b2, b3, b4;
+    Box b1, b2, b3, b4, b5;
 
     b1.setData(2, 2, 2);
     cout << "Volume of Box for b1 is " << b1.getVolume() << endl;
@@ -50,6 +59,9 @@ int main()
 
     b3 = b1 + b2;
     cout << "Volume of Box for b3 is " << b3.getVolume() << endl;
+
+    b5 = b3 - b2;
+    cout << "Volume of Box for b5 is " << b5.getVolume() << endl;
 
     b4 = ++b3;
     cout << "Increment after b3 is " << b4.getVolume() << endl;
